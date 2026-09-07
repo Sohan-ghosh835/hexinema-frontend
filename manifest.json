@@ -1,24 +1,47 @@
 {
-  "name": "Hexinema — Watch Together, Always In Sync",
+  "id": "/",
+  "name": "Hexinema — Watch Together",
   "short_name": "Hexinema",
   "description": "Watch movies with friends in perfect sync. No account needed.",
-  "start_url": "/index.html",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#08080a",
   "theme_color": "#b3122b",
   "orientation": "any",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "icon-512.png",
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Watch Together",
+      "short_name": "Watch",
+      "description": "Start or join a watch room",
+      "url": "/#launch",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
     }
   ]
 }
