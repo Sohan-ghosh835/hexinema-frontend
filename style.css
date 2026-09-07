@@ -81,21 +81,6 @@ body {
   transform: translateY(-1px);
 }
 .nav-github svg { flex-shrink: 0; }
-.nav-install-btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 8px 18px;
-  background: var(--accent); color: #fff !important;
-  border: 1px solid rgba(220,38,38,0.5); border-radius: 8px;
-  font-family: 'Roboto Flex', sans-serif;
-  font-size: 13px; font-weight: 600;
-  text-decoration: none; letter-spacing: 0.01em; cursor: pointer;
-  transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-}
-.nav-install-btn:hover {
-  background: #ef4444;
-  box-shadow: 0 0 15px rgba(239,68,68,0.4);
-  transform: translateY(-1px);
-}
 .hero {
   position: relative;
   min-height: 100vh;

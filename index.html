@@ -1341,10 +1341,6 @@
       <a href="#features">Features</a>
       <a href="#how">How it works</a>
     </div>
-    <button id="pwaInstallBtn" class="nav-install-btn" style="display:none;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Install App
-    </button>
     <a href="https://github.com/Sohan-ghosh835/hexinema-backend" target="_blank" rel="noopener" class="nav-github">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path
@@ -1780,16 +1776,13 @@
     })();
 
     let deferredPrompt;
-    const pwaInstallBtn = document.getElementById('pwaInstallBtn');
     const heroInstallBtn = document.getElementById('heroInstallBtn');
 
     function showInstallPrompts() {
-      if (pwaInstallBtn) pwaInstallBtn.style.display = 'inline-flex';
       if (heroInstallBtn) heroInstallBtn.style.display = 'inline-flex';
     }
 
     function hideInstallPrompts() {
-      if (pwaInstallBtn) pwaInstallBtn.style.display = 'none';
       if (heroInstallBtn) heroInstallBtn.style.display = 'none';
     }
 
@@ -1809,7 +1802,6 @@
       deferredPrompt = null;
     }
 
-    if (pwaInstallBtn) pwaInstallBtn.addEventListener('click', triggerPwaInstall);
     if (heroInstallBtn) heroInstallBtn.addEventListener('click', triggerPwaInstall);
 
     window.addEventListener('appinstalled', () => {
