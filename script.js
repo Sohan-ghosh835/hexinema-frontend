@@ -19,7 +19,6 @@ let isReconnecting = false;
 let lastStatusMessage = "";
 
 function addStatusMessage(text, color = "gray") {
-  // Suppress duplicate consecutive status messages
   if (text === lastStatusMessage) return;
   lastStatusMessage = text;
 
@@ -177,7 +176,6 @@ nameBtn.onclick = () => {
 };
 
 function initializeWebSocket() {
-  // Guard against multiple concurrent reconnection attempts
   if (isReconnecting) return;
   isReconnecting = true;
 
@@ -193,7 +191,6 @@ function initializeWebSocket() {
       return;
     }
 
-    // Handle room-expired error
     if (data.type === "error" && data.message === "room_not_found") {
       addStatusMessage("This room has expired. Please create a new room.", "#f44336");
       if (wsHeartbeat) clearInterval(wsHeartbeat);
@@ -282,11 +279,9 @@ function initializeWebSocket() {
       }
     }
 
-    // Server-side keepalive acknowledgment
     if (data.action === "server_ping") return;
 
     if (data.action === "pong") {
-      // Clear pong timeout — connection is alive
       if (pongTimeout) {
         clearTimeout(pongTimeout);
         pongTimeout = null;
@@ -304,7 +299,6 @@ function initializeWebSocket() {
     console.log("WebSocket connected!");
     addStatusMessage("Connected to server.", "#4caf50");
 
-    // Reset reconnection state on successful connection
     isReconnecting = false;
     reconnectDelay = 1000;
 
@@ -313,7 +307,6 @@ function initializeWebSocket() {
       if (ws.readyState === WebSocket.OPEN) {
         ws.send(JSON.stringify({ action: "ping" }));
 
-        // Set pong timeout — if no pong in 5s, connection is dead
         if (pongTimeout) clearTimeout(pongTimeout);
         pongTimeout = setTimeout(() => {
           console.warn("Pong timeout — closing stale connection");
@@ -343,7 +336,6 @@ function initializeWebSocket() {
     if (pongTimeout) clearTimeout(pongTimeout);
     isReconnecting = false;
 
-    // Exponential backoff: 1s → 2s → 4s → ... → 30s max
     setTimeout(() => {
       initializeWebSocket();
     }, reconnectDelay);
