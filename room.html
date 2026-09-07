@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hexinema</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap" rel="stylesheet" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#b3122b" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Hexinema" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+
+<body>
+
+  <div id="nameOverlay">
+    <div id="nameCard">
+      <h2>Enter your name</h2>
+      <input id="nameInput" type="text" />
+      <button id="nameBtn">Join</button>
+    </div>
+  </div>
+
+  <header id="topBar">
+    <div class="topbar-brand">Hexinema</div>
+    <div id="roomInfo">
+      <div class="infoBox" id="videoName">Loading...</div>
+      <div class="infoBox" id="userCount">1 person</div>
+    </div>
+    <button id="mobileChatToggle" aria-label="Toggle chat">💬 <span>Chat</span></button>
+  </header>
+
+  <div id="app">
+    <div id="videoArea">
+      <video id="video" controls style="display: none;"></video>
+
+      <div id="youtubeContainer" style="display: none;">
+        <div id="youtubePlayer"></div>
+      </div>
+
+      <video id="screenVideo" autoplay style="display: none;"></video>
+      <button id="startScreenShareBtn" style="display: none;">Start Sharing Screen</button>
+    </div>
+
+    <div id="chatPanel">
+      <div id="messages"></div>
+
+      <div id="chatInput">
+        <input id="msgInput" placeholder="Type a message..." autocomplete="off" />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+
+      <div id="inviteContainer">
+        <button id="inviteBtn">Invite</button>
+
+        <div id="inviteMenu">
+          <button id="copyLinkBtn">Copy Invite Link</button>
+          <button id="copyCodeBtn">Copy Room Code</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+
+</html>

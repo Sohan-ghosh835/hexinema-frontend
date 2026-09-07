@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Hexinema — 404</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#b3122b" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Hexinema" />
+<link rel="apple-touch-icon" href="icon-192.png" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<style>
+:root{
+ --black:#08080a;--soft:#101012;--elev:#17171b;--elev2:#1e1e23;
+ --chrome:#f6f6f8;--chrome2:#cfd1d6;--chrome5:#9a9da5;--chrome7:#5c5f66;
+ --red:#b3122b;--redb:#e0263f;--text:#f2f2f4;--mid:#b7b9c0;--low:#77797f;
+ --line:rgba(255,255,255,.09);--ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box}
+html,
+html, body {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior-x: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+body{margin:0;min-height:100%;background:var(--black)}
+body{color:var(--mid);font-family:'Roboto Flex',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(180deg,rgba(255,255,255,.012) 0 1px,transparent 1px 3px);mix-blend-mode:overlay}
+.page{box-sizing:border-box;min-height:100vh;display:flex;flex-direction:column}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,64px);border-bottom:1px solid var(--line);background:rgba(8,8,10,.72);backdrop-filter:blur(14px)}
+.logo{font:italic 1.5rem 'Instrument Serif',serif;text-decoration:none;color:transparent;background:linear-gradient(180deg,#fff,#8f929a 46%,#fff 58%,#6b6e76 78%,#cfd1d6);background-clip:text;-webkit-background-clip:text}
+.status{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--low)}
+main{flex:1;display:grid;place-items:start center;position:relative;overflow:visible;padding:48px 20px 24px}
+.glow{position:absolute;width:520px;height:520px;border-radius:50%;filter:blur(100px);pointer-events:none}
+.g1{top:-220px;left:-180px;background:radial-gradient(circle,rgba(179,18,43,.25),transparent 68%)}
+.g2{right:-220px;bottom:-260px;background:radial-gradient(circle,rgba(90,93,102,.18),transparent 68%)}
+.content{position:relative;text-align:center;max-width:760px}
+.kicker{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:.78rem;color:var(--mid);background:rgba(255,255,255,.02);animation:rise .7s var(--ease) both}
+.kicker i{width:6px;height:6px;border-radius:50%;background:var(--redb);box-shadow:0 0 0 4px rgba(224,38,63,.14)}
+.code{margin:20px 0 0;padding-top:.12em;font:italic 400 clamp(8rem,25vw,15rem)/.9 'Instrument Serif',serif;letter-spacing:-.055em;color:transparent;background:linear-gradient(180deg,#fff 0%,#d7d9dd 22%,#777a82 47%,#fff 58%,#555860 80%,#cfd1d6 100%);background-clip:text;-webkit-background-clip:text;filter:drop-shadow(0 18px 35px rgba(0,0,0,.55));animation:rise .8s .04s var(--ease) both}
+h1{margin:34px 0 12px;font:italic 400 clamp(2rem,5vw,3.5rem)/1.05 'Instrument Serif',serif;color:var(--text);animation:rise .8s .1s var(--ease) both}
+p{margin:auto;max-width:45ch;font-size:1rem;line-height:1.7;color:var(--low);animation:rise .8s .15s var(--ease) both}
+.actions{display:flex;justify-content:center;gap:12px;margin-top:32px;animation:rise .8s .2s var(--ease) both}
+.btn{height:48px;padding:0 24px;border-radius:6px;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:520;text-decoration:none;transition:.2s var(--ease)}
+.primary{background:linear-gradient(180deg,var(--redb),var(--red));color:white;box-shadow:0 8px 24px rgba(179,18,43,.25)}
+.primary:hover{transform:translateY(-1px);box-shadow:0 12px 32px rgba(224,38,63,.35)}
+.ghost{background:rgba(255,255,255,.02);color:var(--text)}
+.ghost:hover{border-color:var(--chrome5);background:rgba(255,255,255,.05)}
+.player{margin:48px auto 0;width:min(520px,88vw);border:1px solid var(--line);border-radius:10px;overflow:hidden;background:linear-gradient(155deg,var(--elev2),var(--soft));box-shadow:0 30px 70px -30px #000;animation:rise .9s .25s var(--ease) both}
+.bar{height:34px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 13px;gap:6px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--chrome7)}.dot:first-child{background:var(--red)}
+.screen{height:135px;position:relative;background:radial-gradient(circle at 50% 45%,rgba(224,38,63,.1),transparent 40%),linear-gradient(180deg,#0b0b0d,#131316);display:grid;place-items:center}
+.screen:after{content:"404";font:italic 3.4rem 'Instrument Serif',serif;color:rgba(255,255,255,.08)}
+.scan{position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,transparent,var(--redb),transparent);opacity:.5;animation:scan 3s ease-in-out infinite}
+.controls{height:42px;display:flex;align-items:center;gap:10px;padding:0 14px}
+.track{height:3px;flex:1;background:#2a2b30;border-radius:3px;overflow:hidden}.fill{width:62%;height:100%;background:linear-gradient(90deg,var(--red),var(--redb))}
+footer{padding:22px;text-align:center;border-top:1px solid var(--line);font-size:.74rem;color:#55575d}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes scan{0%,100%{transform:translateY(-42px);opacity:0}40%,60%{opacity:.5}50%{transform:translateY(42px)}}
+@media(max-width:560px){.nav{height:68px}.status{display:none}main{padding:32px 16px 16px}.actions{flex-direction:column}.btn{width:100%}.player{margin-top:40px}.screen{height:110px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="nav"><a class="logo" href="/">Hexinema</a><span class="status">signal lost · 404</span></header>
+<main>
+<div class="glow g1"></div><div class="glow g2"></div>
+<section class="content">
+<div class="code">404</div>
+<h1>This scene seems to be missing.</h1>
+<p>The page you're looking for wandered off between scenes. Let's get you back to the watch room before the popcorn gets cold.</p>
+<div class="actions"><a class="btn primary" href="/">Back to Hexinema</a><a class="btn ghost" href="javascript:history.back()">Go Back</a></div>
+<div class="player" aria-hidden="true"><div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="screen"><span class="scan"></span></div><div class="controls"><span>00:00</span><div class="track"><div class="fill"></div></div><span style="color:#77797f">404</span></div></div>
+</section>
+</main>
+</div>
+</body>
+</html>
